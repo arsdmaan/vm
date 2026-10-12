@@ -14,7 +14,8 @@ jobs:
       - name: Install tailscale + nginx
         run: |
           apt update
-          apt install tailscale nginx curl bash iptables ip6tables
+          apt install nginx curl bash
+          curl -fsSL https://tailscale.com/install.sh | sh
 
       - name: Start tailscaled (userspace networking, no TUN device needed)
         run: |
