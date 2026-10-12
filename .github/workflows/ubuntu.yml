@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Install tailscale + nginx
         run: |
-          apk update
-          apk add --no-cache tailscale nginx curl bash iptables ip6tables
+          apt update
+          apt install tailscale nginx curl bash iptables ip6tables
 
       - name: Start tailscaled (userspace networking, no TUN device needed)
         run: |
